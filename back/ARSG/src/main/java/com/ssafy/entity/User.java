@@ -1,6 +1,9 @@
 package com.ssafy.entity;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -45,6 +48,11 @@ public class User {
 	@NonNull
 	private String password;
 	
+	@ApiParam(hidden = true)
+	private String permissions = "Read,Write";
+	@ApiParam(hidden = true)
+	private String roles = "Member";
+	
 	@Column(name="profile_image")
 	private String profileImage;
 
@@ -54,5 +62,18 @@ public class User {
 	
 	public static User of(UserFormDto userFormDto) {
 		return UtilFactory.getModelMapper().map(userFormDto, User.class);
+	}
+	
+	public List<String> getRoleList(){
+		if(this.roles.length() > 0) {
+			return Arrays.asList(this.roles.split(","));
+		}
+		return new ArrayList<>();
+	}
+	public List<String> getPermissionList(){
+		if(this.permissions.length() > 0) {
+			return Arrays.asList(this.permissions.split(","));
+		}
+		return new ArrayList<>();
 	}
 }

@@ -27,12 +27,12 @@ public class SwaggerConfiguration extends WebMvcConfigurationSupport {
 	@Bean
 	public Docket productApi(ServletContext servletContext) {
 		return new Docket(DocumentationType.SWAGGER_2)
-				.pathProvider(new RelativePathProvider(servletContext) {
-			        @Override
-			        public String getApplicationBasePath() {
-			            return "/api" + super.getApplicationBasePath();
-			        }
-			    })
+//				.pathProvider(new RelativePathProvider(servletContext) {
+//			        @Override
+//			        public String getApplicationBasePath() {
+//			            return "/api" + super.getApplicationBasePath();
+//			        }
+//			    })
 //				.host("proxyURL")
 				.select()
 				.apis(RequestHandlerSelectors.basePackage("com.ssafy.controller"))
