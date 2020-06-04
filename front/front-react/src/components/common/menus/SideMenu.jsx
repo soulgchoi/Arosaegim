@@ -1,60 +1,78 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import styled from 'styled-components';
-import { Slide, IconButton, Divider } from '@material-ui/core';
-import { Close, VpnKey, AssignmentInd, Face, ExitToApp } from '@material-ui/icons';
+import styled from "styled-components";
+import { Slide, IconButton, Divider } from "@material-ui/core";
+import {
+  Close,
+  VpnKey,
+  AssignmentInd,
+  Face,
+  ExitToApp,
+  Build,
+} from "@material-ui/icons";
 import inlineLogo from "../../../assets/logo/inline-logo-black@2x.png";
 
-import UserInfo from './UserInfo';
-import SideMenuBtn from './SideMenuBtn';
+import UserInfo from "./UserInfo";
+import SideMenuBtn from "./SideMenuBtn";
 
 class SideMenu extends Component {
-
-  render(){
-    return(
+  render() {
+    return (
       <>
-      { 
-        this.props.on && 
-        <StOpacityBack onClick={this.props.toggle}/> 
-      }
+        {this.props.on && <StOpacityBack onClick={this.props.toggle} />}
 
-      <Slide in={this.props.on} direction='right'>
-        <StMenuCont>
-          
-          <StTopCont>
-            <StLogo/>
-            <StCloseBtn size="small" onClick={this.props.toggle}><Close/></StCloseBtn>
-          </StTopCont>
+        <Slide in={this.props.on} direction="right">
+          <StMenuCont>
+            <StTopCont>
+              <StLogo />
+              <StCloseBtn size="small" onClick={this.props.toggle}>
+                <Close />
+              </StCloseBtn>
+            </StTopCont>
 
-          {this.props.isLogin && 
-            <UserInfo on={this.props.on}/>
-          }
-          <Slide in={this.props.on} direction='right' timeout={700}>
-            <StListCont>
-            {
-              this.props.isLogin ? 
-              <>
-                <Divider />
-                <SideMenuBtn link='mypage' txt={'마이페이지'} icon={<Face/>}/>
-                <SideMenuBtn link='logout' txt={'로그아웃'} icon={<ExitToApp/>}/>
-                <Divider />
-              </>
-              :
-              <>
-                <SideMenuBtn link='login' txt={'로그인'} icon={<VpnKey/>}/>
-                <SideMenuBtn link='signup' txt={'회원가입'} icon={<AssignmentInd/>}/>
-                <Divider />
-              </>
-            }
-            </StListCont>
-          </Slide>
-
-        </StMenuCont>
-      </Slide>
+            {this.props.isLogin && <UserInfo on={this.props.on} />}
+            <Slide in={this.props.on} direction="right" timeout={700}>
+              <StListCont>
+                {this.props.isLogin ? (
+                  <>
+                    <Divider />
+                    <SideMenuBtn
+                      link="mypage"
+                      txt={"마이페이지"}
+                      icon={<Face />}
+                    />
+                    <SideMenuBtn
+                      link="logout"
+                      txt={"로그아웃"}
+                      icon={<ExitToApp />}
+                    />
+                    <Divider />
+                  </>
+                ) : (
+                  <>
+                    <SideMenuBtn
+                      link="login"
+                      txt={"로그인"}
+                      icon={<VpnKey />}
+                    />
+                    <SideMenuBtn
+                      link="signup"
+                      txt={"회원가입"}
+                      icon={<AssignmentInd />}
+                    />
+                    <Divider />
+                  </>
+                )}
+                <SideMenuBtn link="contact" txt={"개발자와 연락"} icon={<Build />} />
+              </StListCont>
+            </Slide>
+          </StMenuCont>
+        </Slide>
       </>
-    )
+    );
   }
-} export default SideMenu;
+}
+export default SideMenu;
 
 const StOpacityBack = styled.div`
   position: fixed;
@@ -102,7 +120,7 @@ const StLogo = styled.div`
 
   width: 168px;
   height: 100%;
-  
+
   /* background: #f2f2f2; */
   background-image: url(${inlineLogo});
   background-size: 50%;

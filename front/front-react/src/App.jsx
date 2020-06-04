@@ -20,7 +20,7 @@ import SaegimListPage from "./components/saegim/SaegimListPage";
 import SaegimDetail from "./components/saegim/SaegimDetail";
 import MyPage from "./components/mypage/MyPage";
 import { getUserByEmail } from "./apis/AccountAPI";
-
+import Contact from "./components/contact/Contact"
 class App extends Component {
   constructor(props) {
     super(props);
@@ -195,6 +195,7 @@ class App extends Component {
           <Route path="/list" component={SaegimListPage} />
         </Switch>
         <Route path="/map" component={MapPage} />
+        <Route path="/contact" component={Contact} />
         <Route path="/write" component={Write} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
