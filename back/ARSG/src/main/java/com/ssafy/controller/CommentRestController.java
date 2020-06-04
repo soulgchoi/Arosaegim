@@ -12,7 +12,7 @@ import com.ssafy.service.LikesService;
 
 import io.swagger.annotations.ApiOperation;
 
-@CrossOrigin(origins = {"*"}, maxAge = 6000)
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/comments")
 public class CommentRestController extends EntityRestController{

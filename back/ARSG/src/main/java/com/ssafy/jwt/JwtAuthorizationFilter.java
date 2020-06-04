@@ -19,12 +19,13 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.ssafy.entity.User;
 import com.ssafy.repositories.UserRepository;
 
+
 public class JwtAuthorizationFilter extends BasicAuthenticationFilter{
-	@Autowired
 	private UserRepository userRepository;
 	
-	public JwtAuthorizationFilter(AuthenticationManager authenticationManager) {
+	public JwtAuthorizationFilter(AuthenticationManager authenticationManager, UserRepository userRepository) {
 		super(authenticationManager);
+		this.userRepository = userRepository;
 	}
 
 	@Override

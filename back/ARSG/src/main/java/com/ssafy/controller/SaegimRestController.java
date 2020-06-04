@@ -19,7 +19,7 @@ import com.ssafy.service.SaegimService;
 
 import io.swagger.annotations.ApiOperation;
 
-@CrossOrigin(origins = {"*"}, maxAge = 6000)
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/saegims")
 public class SaegimRestController extends EntityRestController{

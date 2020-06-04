@@ -49,7 +49,7 @@ public class User {
 	private String password;
 	
 	@ApiParam(hidden = true)
-	private String permissions = "Read,Write";
+	private String permissions = "R,W";
 	@ApiParam(hidden = true)
 	private String roles = "Member";
 	

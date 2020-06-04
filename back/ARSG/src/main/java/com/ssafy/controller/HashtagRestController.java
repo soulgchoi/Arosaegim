@@ -13,7 +13,7 @@ import com.ssafy.service.LikesService;
 
 import io.swagger.annotations.ApiOperation;
 
-@CrossOrigin(origins = {"*"}, maxAge = 6000)
+@CrossOrigin(origins = "*")
 @RestController(value = "Hello I'm hashtag")
 @RequestMapping()
 public class HashtagRestController extends EntityRestController{

@@ -33,8 +33,8 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 		LoginFormDto credentials = null;
 		try {
 			credentials = new ObjectMapper().readValue(request.getInputStream(), LoginFormDto.class);
-			System.out.println("email : " + credentials.getEmail());
-			System.out.println("password : " + credentials.getPassword());
+//			System.out.println("email : " + credentials.getEmail());
+//			System.out.println("password : " + credentials.getPassword());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -55,8 +55,8 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 				.withSubject(principal.getUsername())
 				.withExpiresAt(new Date(System.currentTimeMillis() + JwtProperties.EXPIRATION_TIME))
 				.sign(Algorithm.HMAC512(JwtProperties.SECRET.getBytes()));
-		System.out.println("=======================================================");
-		System.out.println("token : " + token);
+//		System.out.println("=======================================================");
+//		System.out.println("token : " + token);
 		response.addHeader(JwtProperties.HEADER_STRING, JwtProperties.TOKEN_PREFIX + token);
 	}
 	

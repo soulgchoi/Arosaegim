@@ -15,6 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.ssafy.jwt.JwtAuthenticationFilter;
 import com.ssafy.jwt.JwtAuthorizationFilter;
+import com.ssafy.repositories.UserRepository;
 import com.ssafy.service.UserPrincipalServiceImpl;
 
 @Configuration
@@ -22,6 +23,14 @@ import com.ssafy.service.UserPrincipalServiceImpl;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private UserPrincipalServiceImpl userPrincipalService;
+	@Autowired
+	private UserRepository userRepository;
+	
+	public JwtAuthenticationFilter getJWTAuthenticationFilter() throws Exception {
+	    final JwtAuthenticationFilter filter = new JwtAuthenticationFilter(authenticationManager());
+	    filter.setFilterProcessesUrl("/users/login");
+	    return filter;
+	}
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -33,17 +42,24 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.sessionManagement()
 			.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 			.and()
-			.addFilter(new JwtAuthenticationFilter(authenticationManager()))
-			.addFilter(new JwtAuthorizationFilter(authenticationManager()))
+//			.addFilter(getJWTAuthenticationFilter())
+			.addFilter(getJWTAuthenticationFilter())
+			.addFilter(new JwtAuthorizationFilter(authenticationManager(), userRepository))
 			.authorizeRequests()
-			.antMatchers(HttpMethod.GET, "/").permitAll()
-			.antMatchers(HttpMethod.GET, "/swagger-ui.html").permitAll()
-			.antMatchers(HttpMethod.GET, "/users/1").permitAll()
-			.antMatchers(HttpMethod.POST, "/users/login").permitAll()
-//			.antMatchers(HttpMethod.POST, "/api/swagger-ui.html").permitAll()
-			.antMatchers("api/public/management/*").hasRole("Member")
-//			.antMatchers("api/public/admin/*").hasRole("ADMIN")
-			.anyRequest().authenticated();
+			.antMatchers(HttpMethod.GET, "/**").permitAll()
+			.antMatchers(HttpMethod.POST, "/users/**").permitAll()
+			.antMatchers(HttpMethod.POST, "/likes/**", "/saegims/**").hasAuthority("W")
+			.antMatchers("/v2/api-docs", "/swagger-resources/**", "/swagger-ui.html", "/webjars/**", "/swagger/**").permitAll()
+			.anyRequest().authenticated()
+//			.and()
+//			.formLogin()
+//			.loginPage("/login")
+//			.loginProcessingUrl("/api/users/login")
+//			.defaultSuccessUrl("/")
+//	    	.failureUrl("/login")
+//	    	.and()
+//	    	.logout()
+			;
 	}
 	
 	@Bean

@@ -7,6 +7,8 @@ import java.util.Set;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.PropertyMap;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.ssafy.dto.LikesDto;
@@ -51,6 +53,8 @@ public class UserServiceImpl implements UserService {
 	}
 	@Override
 	public UserDto postUser(UserFormDto userFormDto) {
+		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		userFormDto.setPassword(passwordEncoder.encode(userFormDto.getPassword()));
 		User tmp = userRepository.save(User.of(userFormDto));
 		if(tmp!=null) {
 			UserDto userDto = UserDto.of(tmp);

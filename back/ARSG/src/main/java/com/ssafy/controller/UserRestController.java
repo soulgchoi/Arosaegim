@@ -18,7 +18,7 @@ import com.ssafy.service.UserService;
 
 import io.swagger.annotations.ApiOperation;
 
-@CrossOrigin(origins = {"*"}, maxAge = 6000)
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/users")
 public class UserRestController extends EntityRestController{
