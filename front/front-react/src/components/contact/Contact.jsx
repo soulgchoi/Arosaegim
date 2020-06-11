@@ -42,51 +42,76 @@ class Contact extends Component {
 
           <Slide in={true} direction="left" timeout={600}>
             <MemberCard href="https://github.com/Oizys18">
-              <ProfileImg src="https://avatars3.githubusercontent.com/u/37648340?s=120&v=4" />
-              <Message>
-                <Name>양찬우 @Oizys18</Name>
+              <MemberContent>
+                <ProfileImg src="https://avatars3.githubusercontent.com/u/37648340?s=120&v=4" />
+              </MemberContent>
+              <MemberContent>
+                <Name>양찬우</Name>
+                <Name>@Oizys18</Name>
+              </MemberContent>
+              <MemberContent>
                 <Role>Frontend</Role>
-              </Message>
+              </MemberContent>
             </MemberCard>
           </Slide>
 
           <Slide in={true} direction="left" timeout={650}>
             <MemberCard href="https://github.com/soulgchoi">
-              <ProfileImg src="https://avatars0.githubusercontent.com/u/52682603?s=120&v=4" />
-              <Message>
-                <Name>최솔지 @soulgchoi</Name>
+              <MemberContent>
+                <ProfileImg src="https://avatars0.githubusercontent.com/u/52682603?s=120&v=4" />
+              </MemberContent>
+              <MemberContent>
+                <Name>최솔지</Name>
+                <Name>@soulgchoi</Name>
+              </MemberContent>
+              <MemberContent>
                 <Role>Frontend</Role>
-              </Message>
+              </MemberContent>
             </MemberCard>
           </Slide>
 
           <Slide in={true} direction="left" timeout={700}>
             <MemberCard href="https://github.com/EXTC27">
-              <ProfileImg src="https://avatars1.githubusercontent.com/u/40153405?s=120&v=4" />
-              <Message>
-                <Name>김신재 @EXTC27</Name>
+              <MemberContent>
+                <ProfileImg src="https://avatars1.githubusercontent.com/u/40153405?s=120&v=4" />
+              </MemberContent>
+              <MemberContent>
+                <Name>김신재</Name>
+                <Name>@EXTC27</Name>
+              </MemberContent>
+              <MemberContent>
                 <Role>Frontend</Role>
-              </Message>
+              </MemberContent>
             </MemberCard>
           </Slide>
           
           <Slide in={true} direction="left" timeout={750}>
             <MemberCard href="https://github.com/kingjky">
-              <ProfileImg src="https://avatars3.githubusercontent.com/u/51773494?s=120&v=4" />
-              <Message>
-                <Name>전경윤 @kingjky</Name>
+              <MemberContent>
+                <ProfileImg src="https://avatars3.githubusercontent.com/u/51773494?s=120&v=4" />
+              </MemberContent>
+              <MemberContent>
+                <Name>전경윤</Name>
+                <Name>@kingjky</Name>
+              </MemberContent>
+              <MemberContent>
                 <Role>Backend</Role>
-              </Message>
+              </MemberContent>
             </MemberCard>
           </Slide>
 
           <Slide in={true} direction="left" timeout={800}>
             <MemberCard href="https://github.com/ghleokim">
-              <ProfileImg src="https://avatars3.githubusercontent.com/u/52501513?s=120&v=4" />
-              <Message>
-                <Name>김건호 @ghleokim</Name>
+              <MemberContent>
+                <ProfileImg src="https://avatars3.githubusercontent.com/u/52501513?s=120&v=4" />
+              </MemberContent>
+              <MemberContent>
+                <Name>김건호</Name>
+                <Name>@ghleokim</Name>
+              </MemberContent>
+              <MemberContent>
                 <Role>Frontend</Role>
-              </Message>
+              </MemberContent>
             </MemberCard>
           </Slide>
 
@@ -114,21 +139,33 @@ const Wrapper = styled.div`
 
 const MemberCard = styled.a`
   width: 60vw;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid black;
-  border-radius: 32px;
-  background: white;
-  display: flex;
+  max-width: 360px;
+
   margin: 0.25em;
   padding: 0.5em;
   padding-right: 1em;
+
+  border: 1px solid black;
+  border-radius: 32px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: white;
+
   font-weight: lighter;
   text-decoration: none;
   &:visited {
     color: black;
   }
 `;
+
+const MemberContent = styled.div`
+  display: flex;
+  flex: row;
+  flex-flow: wrap;
+`
 
 const ProfileImg = styled.img`
   border-radius: 25px;
