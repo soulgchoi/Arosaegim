@@ -140,66 +140,25 @@ $ npm run build
 [![아로새김 시연 영상](http://img.youtube.com/vi/Tn4FY9sjSQY/0.jpg)](https://youtu.be/Tn4FY9sjSQY)
 
 _위 이미지를 클릭하면 영상을 볼 수 있습니다._
+| 메인페이지                                                   | 새김 목록                                                    |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="https://user-images.githubusercontent.com/52682603/143880923-755a9892-24b4-4075-908c-c0e3ea302274.gif" alt="메인페이지"> | <img src="https://user-images.githubusercontent.com/52682603/143880959-4896f148-0e05-46f7-975c-ba40b3f6b016.gif" alt="새김 목록"> |
 
-<table width="100%">
-  <tr>
-    <th>메인페이지</th>
-    <th>리스트</th>
-  </tr>
-  <tr>
-    <td>
-      <img src="https://i.imgur.com/UDQ29OA.gif" width="300" alt="메인페이지">
-    </td>
-    <td>
-      <img src="https://i.imgur.com/NrEVZTM.gif" width="300" alt="리스트">
-    </td>
-  </tr>
-</table>
+| 지도뷰                                                       | 로드뷰                                                       |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="https://user-images.githubusercontent.com/52682603/143880974-dddb4b25-9657-4ac8-a829-40807ae14b2c.gif" alt="지도뷰"> | <img src="https://user-images.githubusercontent.com/52682603/143880969-c9c157f8-8589-4235-8d92-fc29fe5031b4.gif" alt="로드뷰"> |
 
-<table width="100%">
-  <tr>
-    <th>지도 뷰</th>
-    <th>로드뷰</th>
-  </tr>
-  <tr>
-    <td>
-      <img src="https://i.imgur.com/3D6gYYL.gif" width="300" alt="맵">
-    </td>
-    <td>
-      <img src="https://i.imgur.com/I2NumLN.gif" width="300" alt="로드뷰">
-    </td>
-  </tr>
-</table>
+| 필터                                                         | 히스토리                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="https://user-images.githubusercontent.com/52682603/143880996-22c32dd8-07c9-4279-8e00-8c05d45cfa7f.gif" alt="필터"> | <img src="https://user-images.githubusercontent.com/52682603/143881041-36973e25-ef5b-4cc1-9a7d-ea8535541be5.gif" alt="히스토리"> |
 
-<table width="100%">
-  <tr>
-    <th>필터 기능</th>
-    <th>새김 작성</th>
-  </tr>
-  <tr>
-    <td>
-      <img src="https://i.imgur.com/ciGSQcO.gif" width="300" alt="필터">
-    </td>
-    <td>
-      <img src="https://i.imgur.com/JT2cugf.gif" width="300" alt="새김 작성">
-    </td>
-  </tr>
-</table>
+| 새김 작성                                                    | 마이페이지                                                   |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="https://user-images.githubusercontent.com/52682603/143881034-46a35d99-ed4f-4e97-bf92-148ac2cfbad3.gif" alt="새김 작성"> | <img src="https://user-images.githubusercontent.com/52682603/143881037-060b3768-b452-41a8-842f-ac9caf52bb64.gif" alt="마이페이지"> |
 
-<table width="100%">
-  <tr>
-    <th>마이페이지</th>
-    <th>W3W 히스토리</th>
-  </tr>
-  <tr>
-    <td>
-      <img src="https://i.imgur.com/fNMKvbT.gif" width="300" alt="마이페이지">
-    </td>
-    <td>
-      <img src="https://i.imgur.com/1WiU2sc.gif" width="300" alt="히스토리">
-    </td>
-  </tr>
-</table>
+
+
+
 
 ## 팀원
 - 양찬우
